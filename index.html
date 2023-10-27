@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Santa's Inspiration Station</title>
         <!--placeholder for fonts-->
         <link rel="stylesheet" href="style.css">
@@ -10,17 +10,33 @@
     <body>
         <header>
             <!--placeholder for header content-->
+            <div>
+                <nav>
+                    <ul>
+                        <li>COUNTDOWN</li>
+                        <li>CARGO CONVERTER</li>
+                        <li>CREATION STATION</li>
+                    </ul>
+                </nav>
+            </div>
         </header>
-        <nav>
-            <!--placeholder for nav content-->
-        </nav>
         <main>
             <!--placeholder for main content-->
         </main>
         <section>
+        <div id="countdownContainer">
             <h2>Countdown to Christmas Eve</h2>
+            <input type="text" id="countdownOutput">
             <p id="timer"></p>
+        </div>
         </section>
+        <div id="cargoContainer">
+            <h2>Cargo Converter</h2>
+            <input type="text" id="input" placeholder="enter number">
+            <button id="kg">Convert to kilograms</button><button id="pound">Convert to pounds</button><br>
+            <input type="text" id="cargoOutput">
+            
+        </div>
         <footer>
             <!--placeholder for footer content-->
         </footer>

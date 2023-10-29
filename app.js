@@ -27,3 +27,27 @@ lbbutton.addEventListener('click', function(){
     let input = document.getElementById('input').value;
     document.getElementById('cargoOutput').value = input * 2.205 + " lb";
 });
+
+//Creation Station and API
+
+let yesnobtn = document.getElementById('yesornobtn');
+let yesornoimage = document.getElementById('yesornoimage');
+
+yesnobtn.addEventListener('click', function () {
+    fetch('https://yesno.wtf/api')
+    .then(res => res.json())
+    .then(result => {
+        console.log(result)
+        yesornoimage.src = result.image
+    })
+    .catch(err=>console.log(err))
+});
+// yesnobtn.addEventListener('click', function () {
+//     fetch('https://randomuser.me/api/')
+//     .then(res => res.json())
+//     .then(result => {
+//         console.log(result)
+//         yesornoimage.src = result.picture
+//     })
+//     .catch(err=>console.log(err))
+// });

@@ -16,3 +16,11 @@ html {
     margin: 0 auto;
     border: 5px solid #888188;
 }
+
+#artStation {
+    height: auto;
+    width: auto;
+    background-color: gold;
+    margin: auto;
+    border: 5px solid #888188;
+}

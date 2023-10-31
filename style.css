@@ -24,3 +24,16 @@ html {
     margin: auto;
     border: 5px solid #888188;
 }
+
+#swatchit {
+    height: 50px;
+    width: 50px;
+    background-color: white;
+}
+
+#doodlepad {
+    height: auto;
+    width: auto;
+    margin: 10 10 10 10;
+    background-color: black;
+}

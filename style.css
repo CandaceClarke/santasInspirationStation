@@ -2,7 +2,11 @@ html {
     background-color: antiquewhite;
 }
 
+body {
+    font-family: 'Cormorant Upright', cursive;
+}
 #countdownContainer {
+    text-align: center;
     height: auto;
     width: auto;
     background-color: rgb(233, 71, 71);
@@ -10,6 +14,7 @@ html {
     border: 5px solid #888188;
 }
 #cargoContainer {
+    text-align: center;
     height: auto;
     width: auto;
     background-color: rgb(22, 194, 137);
@@ -18,22 +23,28 @@ html {
 }
 
 #artStation {
+    text-align: center;
     height: auto;
     width: auto;
-    background-color: gold;
+    background-color: rgb(240, 220, 110);
     margin: auto;
     border: 5px solid #888188;
 }
 
-#swatchit {
-    height: 50px;
-    width: 50px;
-    background-color: white;
+#doodle {
+    height: auto;
+    width: auto;
+    margin: 10 10 10 10;
+    /*background-color: black;*/
 }
 
 #doodlepad {
     height: auto;
-    width: auto;
-    margin: 10 10 10 10;
-    background-color: black;
+    width: auto; 
+    background-color: rgb(21, 132, 230);
 }
+
+/*#yesornoimage {
+    max-width: 350px;
+    max-height: 350px;
+}*/

@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Santa's Inspiration Station</title>
         <!--placeholder for fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@500&family=Irish+Grover&family=Londrina+Solid&family=Macondo&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -26,13 +29,14 @@
         <section>
         <div id="countdownContainer">
             <h2>Countdown to Christmas Eve</h2>
-            <input type="text" id="countdownOutput">
-            <p id="daysUntil">Days until Christmas Eve!</p>
+            <!--<input type="text" id="countdownOutput">-->
+            <div id="countdownDiv"></div>
+            <p id="daysUntil">days until Christmas Eve!</p>
         </div>
         </section>
         <div id="cargoContainer">
             <h2>Cargo Converter</h2>
-            <input type="text" id="input" placeholder="enter number">
+            <input type="text" id="input" placeholder="enter number"><br>
             <button id="kg">Convert to kilograms</button><button id="pound">Convert to pounds</button><br>
             <input type="text" id="cargoOutput">
         </div>
@@ -40,16 +44,16 @@
             <h2>Creation Station</h2>
             <!--display canvas area
             create canvas controls
-            display "yes or no"
-            create button for user to generate a "yes or no"-->
+            create button for user to generate good words-->
             <div id="doodle">
                 <canvas id="doodlepad">
                 A doodle pad area to sketch ideas.
                 </canvas>
             </div>
             <div id="yesorno">
-                <button id="yesornobtn">Good idea?</button>
-                <img id="yesornoimage">
+                <button id="yesornobtn">Good Words</button>
+                <!--<img id="yesornoimage">-->
+                <p id="inspoQuote"></p>
             </div>
         </div>
         <footer>

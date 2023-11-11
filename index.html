@@ -8,6 +8,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@500&family=Irish+Grover&family=Londrina+Solid&family=Macondo&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Caladea&family=Carattere&family=Cormorant+Upright:wght@500&family=Della+Respira&family=Gabriela&family=Gotu&family=Grandstander&family=Henny+Penny&family=Kurale&family=Londrina+Solid&family=Macondo&family=Merienda&family=Rum+Raisin&family=Smythe&family=Spicy+Rice&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -36,29 +37,32 @@
         </section>
         <div id="cargoContainer">
             <h2>Cargo Converter</h2>
-            <input type="text" id="input" placeholder="enter number"><br>
-            <button id="kg">Convert to kilograms</button><button id="pound">Convert to pounds</button><br>
-            <input type="text" id="cargoOutput">
+            <input type="text" id="cargoInput" class="cargoField" placeholder="enter number"><br>
+            <button id="kg" class="convertButton">Convert to kilograms</button><button id="pound" class="convertButton">Convert to pounds</button><br>
+            <input type="text" id="cargoOutput" class="cargoField">
         </div>
         <div id="artStation">
             <h2>Creation Station</h2>
             <!--display canvas area
-            create canvas controls
-            create button for user to generate good words-->
+            create canvas controls-->
             <div id="doodle">
-                <canvas id="doodlepad">
+                <canvas id="doodlepad" alt="a canvas area with a tree to decorate by drawing multicolored lights" height="750" width="550">
                 A doodle pad area to sketch ideas.
                 </canvas>
+                <p id="treeInstructions">Use your mouse, finger, or pointer to decorate the tree.</p>
             </div>
             <div id="yesorno">
                 <button id="yesornobtn">Good Words</button>
                 <!--<img id="yesornoimage">-->
                 <p id="inspoQuote"></p>
             </div>
+            <div id="artStationBorder">
+                <img src="images/village-border-ai.png" alt="a row of houses on a snow-covered street">
+            </div>
         </div>
         <footer>
             <!--placeholder for footer content-->
         </footer>
-        <script src="app.js"></script>
+        <script src="scripts/app.js"></script>
     </body>
 </html>

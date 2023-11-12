@@ -90,7 +90,7 @@ function draw(e) {
 // canvas.addEventListener('mouseup', () => isDrawing = false);
 // canvas.addEventListener('mouseout', () => isDrawing = false);
 
-//for touch screens
+//for mouse, touch, stylus
 canvas.addEventListener('pointermove', draw);
 canvas.addEventListener('pointerdown', (e) => {
     isDrawing = true;
@@ -100,6 +100,18 @@ canvas.addEventListener('pointerdown', (e) => {
 canvas.addEventListener('pointerup', () => isDrawing = false);
 canvas.addEventListener('pointerout', () => isDrawing = false);
 
+let lights = true;
+const clearDrawing = document.getElementById('clearDrawingbtn');
+
+clearDrawingbtn.addEventListener('click', () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if (clearDrawing) {
+        draw();
+    } else {
+        draw();
+    } 
+    lights = !lights;
+});
 
 //API-----------------------------------------------------------------
 let yesnobtn = document.getElementById('yesornobtn');
@@ -119,19 +131,6 @@ let yesnobtn = document.getElementById('yesornobtn');
 // });
 
 
-    //document.getElementById('yesornotext').value = yesornotext;
-//food inspo api (works)
-    // yesnobtn.addEventListener('click', function () {
-    //     fetch('https://biriyani.anoram.com/get')
-    //     .then(res => res.json())
-    //     .then(result => {
-    //         console.log(result)
-    //         yesornoimage.src = result.image
-    //     })
-    //     .catch(err=>console.log(err))
-    // });
-
-
     yesnobtn.addEventListener('click', function () {
         fetch('https://api.quotable.io/quotes/random')
         .then((response) => {
@@ -148,12 +147,9 @@ let yesnobtn = document.getElementById('yesornobtn');
         .catch(error => console.error("FETCH ERROR:", error));
     })
     
-
-    
-
     function displayInspo(data) {
         const inspoQuote = data[0];
-        const yesornoDiv = document.getElementById('yesorno');
+        const yesornoDiv = document.getElementById('inspoQuotes');
 
         const inspoContent = inspoQuote.content;
         const quoteText = document.createElement("p");

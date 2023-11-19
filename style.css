@@ -5,6 +5,14 @@ html {
 body {
     font-family: 'Rum Raisin', cursive;
 }
+
+/*FIX THIS*/
+@media screen and (max-width: 600px) {
+    #village-border-ai {
+        width:min-content;
+    }
+} 
+    
 #countdownContainer {
     text-align: center;
     font-size: 30px;
@@ -16,7 +24,7 @@ body {
 }
 
 #countdownDiv {
-    font-size: 50px;
+    font-size: 100px;
 }
 
 #cargoContainer {
@@ -80,11 +88,12 @@ body {
     font-family: Gotu, cursive;
     font-size: 35px;
     padding: 10px;
+    background-color: #fff6af;
 }
 
 #yesornobtn {
     box-shadow:inset 0px 1px 11px 0px #fff6af;
-    background:linear-gradient(to top, #F22E3E 5%, #ffab23 100%);
+    background:linear-gradient(to top, #2ef248 5%, #ffab23 100%);
     background-color: #F23D5E;
     border-radius:20px;
     border:2px solid #F23D5E;
@@ -98,7 +107,43 @@ body {
     text-decoration:none;
     text-shadow:0px 1px 0px #F23D5E;
 }
-/*#yesornoimage {
-    max-width: 350px;
-    max-height: 350px;
-}*/
+
+#snackSorting {
+    text-align: center;
+    height: auto;
+    width: auto;
+    background-color: #F23D5E ;
+    margin: 0 auto; 
+    border: 5px solid #537345;
+}
+
+#snacks, #santaSnacks {
+    float:left;
+    width: 150px;
+    height: 300px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+/*Reindeer Games*/
+#reindeerGames {
+    display: flex;
+    text-align: center;
+    height: auto;
+    width: auto;
+    background-color: #537345;
+    margin: 0 auto;
+    border: 5px solid #F23D5E;
+    }
+
+.reindeerButtons {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin: 10px;
+}
+
+select {
+    width: 150px;
+}

@@ -12,7 +12,6 @@ let christmasDate = new Date(christmasYear, 11, 24);
 let dayMilliseconds = 1000 * 60 * 60 * 24;
 let remainingDays = Math.ceil((christmasDate.getTime() - today.getTime()) / (dayMilliseconds));
 
-//document.getElementById('countdownOutput').value = remainingDays;
 document.getElementById('countdownDiv').innerHTML = remainingDays;
 
 //Cargo Converter----------------------------------------------------
@@ -80,16 +79,6 @@ function draw(e) {
     }
 };
 
-//for mouse
-// canvas.addEventListener('mousemove', draw);
-// canvas.addEventListener('mousedown', (e) => {
-//     isDrawing = true;
-//     [lastX, lastY] = [e.offsetX, e.offsetY];
-// });
-
-// canvas.addEventListener('mouseup', () => isDrawing = false);
-// canvas.addEventListener('mouseout', () => isDrawing = false);
-
 //for mouse, touch, stylus
 canvas.addEventListener('pointermove', draw);
 canvas.addEventListener('pointerdown', (e) => {
@@ -115,41 +104,61 @@ clearDrawing.addEventListener('click', () => {
 
 //API-----------------------------------------------------------------
 let yesnobtn = document.getElementById('yesornobtn');
-//let yesornoimage = document.getElementById('yesornoimage');
-//let input = document.getElementById('yesornotext').value;
 
-// yesnobtn.addEventListener('click', function () {
-//     fetch('https://yesno.wtf/api/')
-//     .then(res => res.json())
-//     .then(result => {
-//         console.log(result)
-//         yesornoimage.src = result.image
-//         // trying to get the text to display
-//         yesornotext.src = result.answer
-//     })
-//     .catch(err=>console.log(err))
-// });
-
-
-    yesnobtn.addEventListener('click', function () {
-        fetch('https://api.quotable.io/quotes/random')
-        .then((response) => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                throw new Error("NETWORK RESPONSE ERROR");
-            }
-        })
-        .then(data => {
-            console.log(data);
-            displayInspo(data)
-        })
-        .catch(error => console.error("FETCH ERROR:", error));
+yesnobtn.addEventListener('click', function () {
+    fetch('https://api.quotable.io/quotes/random')
+    .then((response) => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error("NETWORK RESPONSE ERROR");
+        }
     })
+    .then(data => {
+        console.log(data);
+        displayInspo(data)
+    })
+    .catch(error => console.error("FETCH ERROR:", error));
+});
     
-    function displayInspo(data) {
-        const inspoQuote = data[0];
-        const yesornoDiv = document.getElementById('inspoQuotes');
+function displayInspo(data) {
+    const inspoQuote = data[0];
+    const yesornoDiv = document.getElementById('inspoQuotes');
 
-        yesornoDiv.innerHTML = `${inspoQuote.content} </br> ${inspoQuote.author}`;
-    }
+    yesornoDiv.innerHTML = `${inspoQuote.content} </br> ${inspoQuote.author}`;
+};
+
+//Cookie Sorting Drag and Drop ---MAKE THIS TOUCH/POINT EVENT COMPATIBLE!!!!
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    let data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+};
+
+//Reindeer Games Sleigh Roster---------------------------------------
+const stablesSelect = document.getElementById("stablesList");
+const sleighSelect = document.getElementById("sleighDuty");
+const sleighBtn = document.getElementById("toSleigh");
+const stablesBtn = document.getElementById("toStables");
+
+sleighBtn.addEventListener("click", () => {
+    const selectedTransferOptions = 
+        document.querySelectorAll("#stablesList option:checked");
+    const existingSleighOptions = document.querySelectorAll("#sleighDuty option");
+    sleighSelect.replaceChildren(...selectedTransferOptions, ...existingSleighOptions);
+});
+
+stablesBtn.addEventListener("click", () => {
+    const selectedTransferOptions = 
+        document.querySelectorAll("#sleighDuty option:checked");
+    const existingStablesOptions = document.querySelectorAll("#stablesList option");
+    stablesSelect.replaceChildren(...selectedTransferOptions, ...existingStablesOptions);
+});

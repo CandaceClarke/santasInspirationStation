@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Santa's Inspiration Station</title>
+        <link rel="icon" type="image/x-icon" href="/images/santa-belt-favicon.ico">
         <!--placeholder for fonts-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,11 +44,9 @@
         </div>
         <div id="artStation">
             <h2>Creation Station</h2>
-            <!--display canvas area
-            create canvas controls-->
             <div id="doodle">
                 <canvas id="doodlepad" alt="a canvas area with a tree to decorate by drawing multicolored lights" height="750" width="550">
-                A doodle pad area to sketch ideas.
+                A background area with trees to decorate.
                 </canvas>
                 <p id="treeInstructions">Use your mouse, finger, or pointer to decorate the tree.</p>
                 <button id="clearDrawingbtn">Clear Your Drawing</button>
@@ -55,11 +54,55 @@
             <div id="yesorno">
                 <p id="inspoQuotes"></p>
                 <button id="yesornobtn">Words to Inspire</button>
-                <!--<img id="yesornoimage">-->
             </div>
-            <div id="artStationBorder">
-                <img src="images/village-border-ai.png" alt="a row of houses on a snow-covered street">
+        </div>   
+        <div id="snackSorting">
+            <h2>Snack Attack!</h2>
+            <div id="snacks" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <p id="snacksName">Snacks</p>
+                <img src="images/gingerbread-man-3858239_640.png" draggable="true" ondragstart="drag(event)" id="gingerbread" height="100px" width="75px">
+                <img src="images/chocolate-chip-cookies-304801_640.png" draggable="true" ondragstart="drag(event)" id="chocochip" height="100px" width="100px">
+                <!--ADD MORE IMAGES-->
             </div>
+            <div id="santaSnacks" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <p id="santaSnacksName">Santa Snacks</p>
+            </div> 
+        </div>
+
+
+        <div id="reindeerGames">
+            <h2>Reindeer Games</h2>
+            <div id="stables">
+                <label for="stablesList">Stables</label>
+                <select id="stablesList" mulitple size="10">
+                    <option>Blitzen</option>
+                    <option>Carl</option>
+                    <option>Comet</option>
+                    <option>Cupid</option>
+                    <option>Dancer</option>
+                    <option>Dasher</option>
+                    <option>Donner</option>
+                    <option>George</option>
+                    <option>Jabari</option>
+                    <option>Mario</option>
+                    <option>Ophelia</option>
+                    <option>Prancer</option>
+                    <option>Rudolph</option>
+                    <option>Sasha</option>
+                    <option>Vixen</option>
+                </select>
+            </div>
+            <div class="reindeerButtons">
+                <button id="toSleigh">Move to Sleigh Duty</button>
+                <button id="toStables">Move to Stables</button>
+            </div>
+            <div id="sleigh">
+                <label for="sleighDuty">Sleigh Duty</label>
+                <select id="sleighDuty" multiple size="10"></select>
+            </div>
+        </div>
+        <div id="artStationBorder">
+            <img id="village-border-ai" src="images/village-border-ai.png" alt="a row of houses on a snow-covered street">
         </div>
         <footer>
             <!--placeholder for footer content-->

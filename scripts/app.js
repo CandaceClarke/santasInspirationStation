@@ -103,7 +103,7 @@ canvas.addEventListener('pointerout', () => isDrawing = false);
 let lights = true;
 const clearDrawing = document.getElementById('clearDrawingbtn');
 
-clearDrawingbtn.addEventListener('click', () => {
+clearDrawing.addEventListener('click', () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     if (clearDrawing) {
         draw();
@@ -151,15 +151,5 @@ let yesnobtn = document.getElementById('yesornobtn');
         const inspoQuote = data[0];
         const yesornoDiv = document.getElementById('inspoQuotes');
 
-        const inspoContent = inspoQuote.content;
-        const quoteText = document.createElement("p");
-        quoteText.innerHTML = inspoContent;
-
-        yesornoDiv.appendChild(quoteText);
-
-        const inspoAuth = inspoQuote.author;
-        const authName = document.createElement("p");
-        authName.innerHTML = inspoAuth;
-
-        yesornoDiv.appendChild(authName);
+        yesornoDiv.innerHTML = `${inspoQuote.content} </br> ${inspoQuote.author}`;
     }

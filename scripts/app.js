@@ -1,5 +1,33 @@
 "use strict";
 
+//Navigation---------------------------------------------------------
+//Nav menu
+function goHere() {
+    let x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+};
+
+//Scroll to Top Button
+let upButton = document.getElementById("returnToTopBtn");
+
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        upButton.style.display = "block";
+    } else {
+        upButton.style.display = "none";
+    }
+};
+
+function returnTopFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+};
+
 //Countdown----------------------------------------------------------
 let today = new Date();
 let christmasYear = today.getFullYear();
@@ -33,18 +61,6 @@ lbbutton.addEventListener('click', function(){
 const canvas = document.querySelector("#doodlepad");
 const ctx = canvas.getContext("2d");
 
-// const image = new Image(955, 1280);
-// image.onload = drawImageActualSize;
-// image.src = "images/christmas-tree-plain.png";
-
-// function drawImageActualSize() {
-//     doodle.width = this.naturalWidth;
-//     doodle.height = this.naturalHeight;
-//     ctx.drawImage(this, 0, 0);
-//     ctx.drawImage(this, 0, 0, this.width, this.height);
-// }
-//  canvas.width = window.innerWidth;
-//  canvas.height = window.innerHeight;
 ctx.strokeStyle = '#BADA55';
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
@@ -103,7 +119,7 @@ clearDrawing.addEventListener('click', () => {
 });
 
 //API-----------------------------------------------------------------
-let yesnobtn = document.getElementById('yesornobtn');
+const yesnobtn = document.getElementById('yesornobtn');
 
 yesnobtn.addEventListener('click', function () {
     fetch('https://api.quotable.io/quotes/random')
@@ -125,22 +141,7 @@ function displayInspo(data) {
     const inspoQuote = data[0];
     const yesornoDiv = document.getElementById('inspoQuotes');
 
-    yesornoDiv.innerHTML = `${inspoQuote.content} </br> ${inspoQuote.author}`;
-};
-
-//Cookie Sorting Drag and Drop ---MAKE THIS TOUCH/POINT EVENT COMPATIBLE!!!!
-function allowDrop(ev) {
-    ev.preventDefault();
-}
-
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-    ev.preventDefault();
-    let data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
+    yesornoDiv.innerHTML = `"${inspoQuote.content}" </br> - ${inspoQuote.author}`;
 };
 
 //Reindeer Games Sleigh Roster---------------------------------------
@@ -162,3 +163,18 @@ stablesBtn.addEventListener("click", () => {
     const existingStablesOptions = document.querySelectorAll("#stablesList option");
     stablesSelect.replaceChildren(...selectedTransferOptions, ...existingStablesOptions);
 });
+
+//Cookie Sorting Drag and Drop ---MAKE THIS TOUCH/POINT EVENT COMPATIBLE!!!!
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    let data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+};

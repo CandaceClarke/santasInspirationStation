@@ -1,95 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Santa's Inspiration Station</title>
-        <link rel="icon" type="image/x-icon" href="/images/santa-belt-favicon.ico">
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="/images/santa-belt-favicon.ico"
+        />
         <!--placeholder for fonts-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@500&family=Irish+Grover&family=Londrina+Solid&family=Macondo&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Caladea&family=Carattere&family=Cormorant+Upright:wght@500&family=Della+Respira&family=Gabriela&family=Gotu&family=Grandstander&family=Henny+Penny&family=Kurale&family=Londrina+Solid&family=Macondo&family=Merienda&family=Rum+Raisin&family=Smythe&family=Spicy+Rice&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@500&family=Irish+Grover&family=Londrina+Solid&family=Macondo&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Caladea&family=Carattere&family=Cormorant+Upright:wght@500&family=Della+Respira&family=Gabriela&family=Gotu&family=Grandstander&family=Henny+Penny&family=Kurale&family=Londrina+Solid&family=Macondo&family=Merienda&family=Rum+Raisin&family=Smythe&family=Spicy+Rice&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
-        <header>
-            <!--placeholder for header content-->
-            <div>
-                <nav>
-                    <ul>
-                        <li>COUNTDOWN</li>
-                        <li>CARGO CONVERTER</li>
-                        <li>CREATION STATION</li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <main>
-            <!--placeholder for main content-->
-        </main>
-        <section>
+    <header>
+        <!--placeholder for header content-->
+        <nav class="topnav" id="myTopnav">
+            <a href="#countdownSection">COUNTDOWN</a>
+            <a href="#converterSection">CARGO CONVERTER</a>
+            <a href="#artStationSection">CREATION STATION</a>
+            <a href="#inspirationalQuotes">INSPIRATIONAL QUOTES</a>
+            <a href="#reindeerGamesSection">REINDEER GAMES</a>
+            <a href="#snackAttackSection">SNACK ATTACK</a>
+            <a href="javascript:void(0);" class="icon" onclick="goHere()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </nav>
+    </header>
+    <button onclick="returnTopFunction()" id="returnToTopBtn" title="Return to Top">^</button>
+    <main>
+        <!--placeholder for main content-->
+    </main>
+    <section id="countdownSection">
         <div id="countdownContainer">
             <h2>Countdown to Christmas Eve</h2>
             <!--<input type="text" id="countdownOutput">-->
             <div id="countdownDiv"></div>
             <p id="daysUntil">days until Christmas Eve!</p>
         </div>
-        </section>
+    </section>
+    <section id="converterSection">
         <div id="cargoContainer">
-            <h2>Cargo Converter</h2>
-            <input type="text" id="cargoInput" class="cargoField" placeholder="enter number"><br>
-            <button id="kg" class="convertButton">Convert to kilograms</button><button id="pound" class="convertButton">Convert to pounds</button><br>
-            <input type="text" id="cargoOutput" class="cargoField" placeholder="converted number">
+        <h2>Cargo Converter</h2>
+        <input
+            type="text"
+            id="cargoInput"
+            class="cargoField"
+            placeholder="enter number"
+        /><br />
+        <button id="kg" class="convertButton">Convert to kilograms</button
+        ><button id="pound" class="convertButton">Convert to pounds</button><br />
+        <input
+            type="text"
+            id="cargoOutput"
+            class="cargoField"
+            placeholder="converted number"
+        />
         </div>
+    </section>
+    <section id="artStationSection">
         <div id="artStation">
-            <h2>Creation Station</h2>
+        <h2>Creation Station</h2>
             <div id="doodle">
-                <canvas id="doodlepad" alt="a canvas area with a tree to decorate by drawing multicolored lights" height="750" width="550">
+                <canvas
+                id="doodlepad"
+                alt="a canvas area with a tree to decorate by drawing multicolored lights"
+                height="750"
+                width="550"
+                >
                 A background area with trees to decorate.
                 </canvas>
-                <p id="treeInstructions">Use your mouse, finger, or pointer to decorate the tree.</p>
+                <p id="treeInstructions">
+                Use your mouse, finger, or pointer to decorate the tree.
+                </p>
                 <button id="clearDrawingbtn">Clear Your Drawing</button>
             </div>
-            <div id="yesorno">
-                <p id="inspoQuotes"></p>
-                <button id="yesornobtn">Words to Inspire</button>
-            </div>
-        </div>   
-        <div id="snackSorting">
-            <h2>Snack Attack!</h2>
-            <div id="snacks" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <p id="snacksName">Snacks</p>
-                <img src="images/gingerbread-man-3858239_640.png" draggable="true" ondragstart="drag(event)" id="gingerbread" height="100px" width="75px">
-                <img src="images/chocolate-chip-cookies-304801_640.png" draggable="true" ondragstart="drag(event)" id="chocochip" height="100px" width="100px">
-                <!--ADD MORE IMAGES-->
-            </div>
-            <div id="santaSnacks" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <p id="santaSnacksName">Santa Snacks</p>
-            </div> 
         </div>
-
-
+    </section>
+    <section id="inspirationalQuotes">
+        <div id="yesorno">
+            <p id="inspoQuotes"></p>
+            <button id="yesornobtn">Words to Inspire</button>
+        </div>
+    </section>
+        
+    <section id="reindeerGamesSection">
         <div id="reindeerGames">
-            <h2>Reindeer Games</h2>
+        <h2>Reindeer Games</h2>
             <div id="stables">
                 <label for="stablesList">Stables</label>
                 <select id="stablesList" mulitple size="10">
-                    <option>Blitzen</option>
-                    <option>Carl</option>
-                    <option>Comet</option>
-                    <option>Cupid</option>
-                    <option>Dancer</option>
-                    <option>Dasher</option>
-                    <option>Donner</option>
-                    <option>George</option>
-                    <option>Jabari</option>
-                    <option>Mario</option>
-                    <option>Ophelia</option>
-                    <option>Prancer</option>
-                    <option>Rudolph</option>
-                    <option>Sasha</option>
-                    <option>Vixen</option>
+                <option>Blitzen</option>
+                <option>Carl</option>
+                <option>Comet</option>
+                <option>Cupid</option>
+                <option>Dancer</option>
+                <option>Dasher</option>
+                <option>Donner</option>
+                <option>George</option>
+                <option>Isaac</option>
+                <option>Jabari</option>
+                <option>Jake</option>
+                <option>Mario</option>
+                <option>Ophelia</option>
+                <option>Prancer</option>
+                <option>Rudolph</option>
+                <option>Sasha</option>
+                <option>Sunny</option>
+                <option>Vixen</option>
                 </select>
             </div>
             <div class="reindeerButtons">
@@ -101,12 +130,86 @@
                 <select id="sleighDuty" multiple size="10"></select>
             </div>
         </div>
-        <div id="artStationBorder">
-            <img id="village-border-ai" src="images/village-border-ai.png" alt="a row of houses on a snow-covered street">
+    </section>
+    <section id="snackAttackSection">
+        <div id="snackSorting">
+            <h2>Snack Attack!</h2>
+            <div
+            id="snacks"
+            class="snackstuff"
+            ondrop="drop(event)" 
+            ondragover="allowDrop(event)"
+            pointerdown="pickup(event)"
+            pointerup="drop(event)"
+            >
+                <p id="snacksFirst">Snacks</p>
+                <img
+                src="images/gingerbread-man-3858239_640.png"
+                draggable="true"
+                ondragstart="drag(event)"
+                class="snack"
+                id="gingerbread"
+                alt="gingerbread"
+                height="100px"
+                width="75px"
+                />
+                <img
+                src="images/chocolate-chip-cookies-304801_640.png"
+                draggable="true"
+                ondragstart="drag(event)"
+                class="snack"
+                id="cookie"
+                alt="chocolate chip cookie"
+                height="100px"
+                width="100px"
+                />
+                <img
+                src="images/apple-6810736_640.png"
+                draggable="true"
+                ondragstart="drag(event)"
+                class="snack"
+                id="apple"
+                alt="apple"
+                height="100px"
+                width="100px"
+                />
+                <img
+                src="images/carrot-6300849_640.png"
+                draggable="true"
+                ondragstart="drag(event)"
+                class="snack"
+                id="carrots"
+                alt="carrots"
+                height="75px"
+                width="100px"
+                />
+            </div>
+            <div
+                id="santaSnacks"
+                class="snackstuff"
+                ondrop="drop(event)" 
+                ondragover="allowDrop(event)"
+                pointerdown="pickup(event)"
+                pointermove="move(event)"
+                pointerup="drop(event)"
+            >
+                <p id="santaSnacksName">Santa Snacks</p>
+            </div>
+            <div
+                id="reindeerSnacks"
+                class="snackstuff"
+                ondrop="drop(event)"
+                ondragover="allowDrop(event)"
+            >
+                <p id="reindeerSnacksName">Reindeer Snacks</p>
+            </div>
         </div>
-        <footer>
-            <!--placeholder for footer content-->
-        </footer>
-        <script src="scripts/app.js"></script>
+    </section>
+    <div id="endOfPageBorder">
+    </div>
+    <footer>
+        <!--placeholder for footer content-->
+    </footer>
+    <script src="scripts/app.js"></script>
     </body>
 </html>

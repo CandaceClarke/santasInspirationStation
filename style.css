@@ -43,16 +43,16 @@ body {
     z-index: 99;
     border: none;
     outline: none;
-    background-color: #2ef248;
+    background-color: #78ff9e;
     color: #f2f2f2;
     cursor: pointer;
     padding: 15px;
     border-radius: 10px;
-    font-size: 22px;
+    font-size: 30px;
 }
 
 #returnToTopBtn:hover {
-    background-color: #537345;
+    background-color: #00ff48;
 }
 
 /*MEDIA QUERIES*/
@@ -87,6 +87,31 @@ body {
     }
 } 
 
+.button {
+    box-shadow:inset 0px 1px 11px 0px #fff6af;
+    background:linear-gradient(to top, #00ff48 5%, #78ff9e 100%);
+    background-color: #F23D5E;
+    border-radius:20px;
+    border:2px solid #00ff48;
+    margin: 5px;
+    display:inline-block;
+    cursor:pointer;
+    color: #050000;
+    font-family: "Gotu", cursive;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+}
+.button:hover {
+	background:linear-gradient(to bottom, #78ff9e 5%, #42b362 100%);
+	background-color:#ff4050;
+}
+.button:active {
+	position:relative;
+	top:1px;
+}
+
 /*Countdown Container*/
 #countdownContainer {
     text-align: center;
@@ -99,15 +124,24 @@ body {
 }
 
 #countdownDiv {
-    font-size: 100px;
+    font-size: 125px;
 }
 
 /*Cargo Converter*/
 #cargoContainer {
     text-align: center;
+    font-size: 20px;
     height: auto;
     width: auto;
-    background-color: #537345;
+    background-color: #af000f;
+    background: repeating-linear-gradient(
+        45deg,
+        #f56c85, 
+        #ffedee 6px, 
+        #ee617d 25px, 
+        #ffedee 40px, 
+        #ee617d 70px, 
+        #fff 5px);
     margin: 0 auto;
     border: 5px solid #F23D5E;
 }
@@ -118,37 +152,21 @@ body {
     padding: 10px;
     margin: 10px;
     text-align: center;
+    font-size: 15px;
 }
 
-.convertButton {
-    box-shadow:inset 0px 1px 11px 0px #fff6af;
-    background:linear-gradient(to top, #F22E3E 5%, #ffab23 100%);
-    background-color: #F23D5E;
-    border-radius:20px;
-    border:2px solid #F23D5E;
-    display:inline-block;
-    cursor:pointer;
-    color: #730202;
-    font-family: "Rum Raisin", cursive;
-    font-size: 15px;
-    font-weight:bold;
-    padding:6px 24px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #F23D5E;
-    }
-
-/*Creation Station*/
-#artStation {
+/*Tree Lighting*/
+#treeLighting {
     text-align: center;
     height: auto;
     width: auto;
     font-size: 20px;
-    background-color: #730202;
-    background-image: url(images/light-night-sky.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: auto;
-    border: 5px solid #BFBFBD;
+    background: rgb(153,185,238);
+    background: radial-gradient(
+        circle, 
+        rgba(153,185,238,1) 0%, 
+        rgba(12,39,110,1) 100%);
+    border: 5px solid rgb(189, 191, 190);
 }
 
 #doodle {
@@ -166,52 +184,51 @@ body {
 }
 
 /*Inspirational Quotes*/
+#inspoBackground {
+    background-image: url(images/multi-sparkle-background.jpg);
+    text-align: center;
+    padding: 10px;
+}
+
 #yesorno {
     text-align: center;
+    margin: 25px;
     font-family: "Kurale", cursive;
     font-size: 35px;
     padding: 10px;
     background-color: #fff6af;
-;
-}
-
-#yesornobtn {
-    box-shadow:inset 0px 1px 11px 0px #fff6af;
-    background:linear-gradient(to top, #2ef248 5%, #ffab23 100%);
-    background-color: #F23D5E;
-    border-radius:20px;
-    border:2px solid #F23D5E;
-    display:inline-block;
-    cursor:pointer;
-    color: #730202;
-    font-family: "Gotu", cursive;
-    font-size:15px;
-    font-weight:bold;
-    padding:6px 24px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #F23D5E;
+    opacity: 0.85;
 }
 
 /*Reindeer Games*/
 #reindeerGames {
-    display: flex;
+    /*display: flex;*/
     text-align: center;
     height: auto;
     width: auto;
-    background-color: #537345;
+    background-color: #9c9c9c;
+    background-image: url(images/barn-lights-background.jpg);
     margin: 0 auto;
     border: 5px solid #F23D5E;
     }
 
-.reindeerButtons {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    margin: 10px;
+select {
+    text-align: center;
+    border-radius: 5px;
+    border-color: #04a319;
+    border-width: 2px;
+    width: 150px;
+    font-family: "Caladea", Arial, Helvetica, sans-serif;
+    font-size: 18px;
 }
 
-select {
-    width: 150px;
+.reindeerRoster {
+    font-size: 25px;
+    text-align: center;
+    max-width: 260px;
+    position: relative;
+    display: inline-block;
+    padding: 10px;
 }
 
 /*Snack Attack*/
@@ -220,18 +237,21 @@ select {
     height: 450px;
     width: auto;
     background-color: #F23D5E ;
-    background-image: url(images/pattern-gingerbread.jpg);
+    background-image: url(images/cookie-background.png);
     margin: 0 auto; 
     border: 5px solid #537345;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .snackstuff {
-    float:left;
+    /*float:left;*/
     width: 150px;
     height: 300px;
     margin: 10px;
     padding: 10px;
-    background-color: #F23D5E ;
+    background-color: #eb95a5 ;
     border: 1px solid black;
     opacity: 0.95;
 }

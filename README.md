@@ -20,7 +20,7 @@
 - Retrieve data from a third-party API and use it to display something.
     >Inspirational Quotes: Press the button to retrieve some words from someone else. Don't like what they have to say? Press it again to get a new quote.
 - Implement modern interactive UI features.
-    >Tree Lighting: Through the power of HTML <canvas> and JavaScript, you can decorate the tree with ease. Hang those lights in an direction without fear of entanglement. If it looks wacky, use the button to clear the scene and start again. Lucky for you, this is even available on mobile and touch screens!
+    >Tree Lighting: Through the power of HTML <canvas> and JavaScript, you can decorate the tree with ease. Hang those lights in any direction without fear of entanglement. If it looks wacky, use the button to clear the scene and start again. Lucky for you, this is even available on mobile and touch screens!
 
     >Reindeer Games: Select names from the "Stables" roster and move them to the "Sleigh Duty" roster as you build your team for transport. Oh no- does Rudolph have a cold? Send him back to the stables and pick a suitable replacement.
 

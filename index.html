@@ -9,11 +9,10 @@
             type="image/x-icon"
             href="/images/santa-belt-favicon.ico"
         />
-        <!--placeholder for fonts-->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Caladea&family=Carattere&family=Cormorant+Upright:wght@500&family=Della+Respira&family=Gabriela&family=Gotu&family=Grandstander&family=Henny+Penny&family=Kurale&family=Londrina+Solid&family=Macondo&family=Merienda&family=Rum+Raisin&family=Smythe&family=Spicy+Rice&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Caladea&family=Gabriela&family=Gotu&family=Grandstander&family=Kurale&family=Rum+Raisin&display=swap"
             rel="stylesheet"
         />
         <link rel="stylesheet" href="style.css" />
@@ -21,65 +20,74 @@
     </head>
     <body>
     <header>
-        <!--placeholder for header content-->
+        <h1 class="title title-page">
+            <span class="title-main">Santa's Inspiration Station</span>
+            <span class="title-note">LET'S GET READY FOR THE BIG NIGHT!</span>
+        </h1>
         <nav class="topnav" id="myTopnav">
             <a href="#countdownSection">COUNTDOWN</a>
             <a href="#converterSection">CARGO CONVERTER</a>
             <a href="#treeLightingSection">TREE LIGHTING</a>
             <a href="#inspirationalQuotes">INSPIRATIONAL QUOTES</a>
             <a href="#reindeerGamesSection">REINDEER GAMES</a>
-            <a href="#snackAttackSection">SNACK ATTACK</a>
+            <a href="#snackAttackSection" id="snackNav">SNACK ATTACK</a>
             <a href="javascript:void(0);" class="icon" onclick="goHere()">
                 <i class="fa fa-bars"></i>
             </a>
         </nav>
     </header>
-    <button onclick="returnTopFunction()" id="returnToTopBtn" title="Return to Top">^</button>
-    <main>
-        <!--placeholder for main content-->
-    </main>
+    <button onclick="returnTopFunction()" id="returnToTopBtn" title="Return to Top">&#11165</button>
+    <div id="countdown-cargo">
     <section id="countdownSection">
         <div id="countdownContainer">
-            <h2>Countdown to Christmas Eve</h2>
-            <!--<input type="text" id="countdownOutput">-->
+            <div id="countdownHeading" class="sectionHeading">
+                <h2>Countdown to Christmas Eve</h2>
+            </div>
             <div id="countdownDiv"></div>
             <p id="daysUntil">days until Christmas Eve!</p>
+            </div>
         </div>
     </section>
     <section id="converterSection">
         <div id="cargoContainer">
-        <h2>Cargo Converter</h2>
-        <input
-            type="text"
-            id="cargoInput"
-            class="cargoField"
-            placeholder="enter number"
-        /><br />
-        <button id="kg" class="button">Convert to kilograms</button>
-        <button id="pound" class="button">Convert to pounds</button><br />
-        <input
-            type="text"
-            id="cargoOutput"
-            class="cargoField"
-            placeholder="converted number"
-        />
+            <div id="cargoHeading" class="sectionHeading">
+                <h2>Cargo Converter</h2>
+            </div>
+            <input
+                type="number"
+                id="cargoInput"
+                class="cargoField"
+                placeholder="  enter number"
+            /><br />
+            <button id="kg" class="button">Convert to kilograms</button>
+            <button id="pound" class="button">Convert to pounds</button><br />
+            <input
+                type="text"
+                id="cargoOutput"
+                class="cargoField"
+                placeholder="converted number"
+            />
         </div>
     </section>
+    </div>
     <section id="treeLightingSection">
         <div id="treeLighting">
-        <h2>Tree Lighting</h2>
+            <div id="treeHeading" class="sectionHeading">
+                <h2>Tree Lighting</h2>
+            </div>
             <div id="doodle">
                 <canvas
                 id="doodlepad"
                 alt="a canvas area with a tree to decorate by drawing multicolored lights"
                 height="700"
-                width="550"
                 >
                 A background area with trees to decorate.
                 </canvas>
-                <p id="treeInstructions">
-                Use your mouse, finger, or pointer to decorate the tree.
-                </p>
+                <div id="treeInstructionSpace">
+                    <p id="treeInstructions">
+                    Use your mouse, finger, or pointer to decorate the tree.
+                    </p>
+                </div>
                 <button id="clearDrawingbtn" class="button">Clear Your Drawing</button>
             </div>
         </div>
@@ -92,13 +100,15 @@
             <button id="yesornobtn" class="button">Words to Inspire</button>
     </div>
     </section>
-        
+    <div id="reindeer-snacks"> 
     <section id="reindeerGamesSection">
         <div id="reindeerGames">
-        <h2>Reindeer Games</h2>
+            <div id="reindeerHeading" class="sectionHeading">
+                <h2>Reindeer Games</h2>
+            </div>
             <div id="stables" class="reindeerRoster">
                 <label id="stablesLabel" for="stablesList" class="reindeerLabel">Stables</label>
-                <select id="stablesList" mulitple size="10">
+                <select id="stablesList" mulitple size="8">
                     <option>Blitzen</option>
                     <option>Carl</option>
                     <option>Comet</option>
@@ -120,25 +130,25 @@
                 </select>
             </div>
             <div class="reindeerButtons">
-                <button id="toSleigh" class="button">Move to Sleigh Duty</button>
-                <button id="toStables" class="button">Move to Stables</button>
+                <button id="toSleigh" class="button">Move to Sleigh Duty &#11167</button>
+                <button id="toStables" class="button">&#11165 Move to Stables</button>
             </div>
             <div id="sleigh" class="reindeerRoster">
                 <label id="sleighLabel" for="sleighDuty" class="reindeerLabel">Sleigh Duty</label>
-                <select id="sleighDuty" multiple size="10"></select>
+                <select id="sleighDuty" multiple size="8"></select>
             </div>
         </div>
     </section>
     <section id="snackAttackSection">
         <div id="snackSorting">
-            <h2>Snack Attack!</h2>
+            <div id="snackHeading" class="sectionHeading">
+                <h2>Snack Attack!</h2>
+            </div>
             <div
             id="snacks"
             class="snackstuff"
             ondrop="drop(event)" 
             ondragover="allowDrop(event)"
-            pointerdown="pickup(event)"
-            pointerup="drop(event)"
             >
                 <p id="snacksFirst">Snacks</p>
                 <img
@@ -182,31 +192,31 @@
                 width="100px"
                 />
             </div>
-            <div
-                id="santaSnacks"
-                class="snackstuff"
-                ondrop="drop(event)" 
-                ondragover="allowDrop(event)"
-                pointerdown="pickup(event)"
-                pointermove="move(event)"
-                pointerup="drop(event)"
-            >
-                <p id="santaSnacksName">Santa Snacks</p>
-            </div>
-            <div
-                id="reindeerSnacks"
-                class="snackstuff"
-                ondrop="drop(event)"
-                ondragover="allowDrop(event)"
-            >
-                <p id="reindeerSnacksName">Reindeer Snacks</p>
+            <div class="snack-dropzone">
+                <div
+                    id="santaSnacks"
+                    class="snackstuff"
+                    ondrop="drop(event)" 
+                    ondragover="allowDrop(event)"
+                >
+                    <p id="santaSnacksName">Santa Snacks</p>
+                </div>
+                <div
+                    id="reindeerSnacks"
+                    class="snackstuff"
+                    ondrop="drop(event)"
+                    ondragover="allowDrop(event)"
+                >
+                    <p id="reindeerSnacksName">Reindeer Snacks</p>
+                </div>
             </div>
         </div>
     </section>
+    </div> 
     <div id="endOfPageBorder">
     </div>
     <footer>
-        <!--placeholder for footer content-->
+        <p id="footerText">Have a holly, jolly time!</p>
     </footer>
     <script src="scripts/app.js"></script>
     </body>

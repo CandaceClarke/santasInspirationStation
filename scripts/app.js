@@ -56,7 +56,7 @@ lbbutton.addEventListener('click', function(){
     document.getElementById('cargoOutput').value = input * 2.205 + " lb";
 });
 
-//Creation Station---------------------------------------------------
+//Tree Lighting---------------------------------------------------
 //Doodle pad via canvas element
 const canvas = document.querySelector("#doodlepad");
 const ctx = canvas.getContext("2d");
@@ -99,11 +99,10 @@ function draw(e) {
 canvas.addEventListener('pointermove', draw);
 canvas.addEventListener('pointerdown', (e) => {
     isDrawing = true;
-    [lastX, lastY] = [e.offsetX, e.offsetY]; //figure this out somehow
+    [lastX, lastY] = [e.offsetX, e.offsetY];
 });
 
 canvas.addEventListener('pointerup', () => isDrawing = false);
-canvas.addEventListener('pointerout', () => isDrawing = false);
 
 let lights = true;
 const clearDrawing = document.getElementById('clearDrawingbtn');
@@ -151,8 +150,7 @@ const sleighBtn = document.getElementById("toSleigh");
 const stablesBtn = document.getElementById("toStables");
 
 sleighBtn.addEventListener("click", () => {
-    const selectedTransferOptions = 
-        document.querySelectorAll("#stablesList option:checked");
+    const selectedTransferOptions = document.querySelectorAll("#stablesList option:checked");
     const existingSleighOptions = document.querySelectorAll("#sleighDuty option");
     sleighSelect.replaceChildren(...selectedTransferOptions, ...existingSleighOptions);
 });
@@ -164,7 +162,7 @@ stablesBtn.addEventListener("click", () => {
     stablesSelect.replaceChildren(...selectedTransferOptions, ...existingStablesOptions);
 });
 
-//Cookie Sorting Drag and Drop ---MAKE THIS TOUCH/POINT EVENT COMPATIBLE!!!!
+//Cookie Sorting Drag and Drop ---THIS IS NOT TOUCH/POINT EVENT COMPATIBLE (YET)!!!!
 function allowDrop(ev) {
     ev.preventDefault();
 }
